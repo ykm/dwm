@@ -51,6 +51,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-b", "-l", dmenuitems, "-fn", fo
 static const char *termcmd[] = { "lxterminal", NULL };
 static const char *explorecmd[] = { "pcmanfm", NULL };
 static const char *lockcmd[] = { "slock", NULL };
+static const char *shutcmd[] = { "shutdown", "-h", "now",  NULL };
 static const char *volume_up[] = { "amixer", "set", "Master", "10%+", NULL };
 static const char *volume_down[] = { "amixer", "set", "Master", "10%-", NULL };
 static const char *volume_toggle[] = { "amixer", "set", "Master", "toggle", NULL };
@@ -62,6 +63,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_l,      spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = explorecmd } },
+        { MODKEY|ShiftMask,             XK_Delete, spawn,          {.v = shutcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
